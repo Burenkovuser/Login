@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private let userName = "User"
     private let password = "Password"
@@ -22,6 +22,8 @@ class LoginViewController: UIViewController {
         
     }
 
+    // MARK: IBActions
+    
     @IBAction func loginPressed() {
         if userNameTextField.text == userName && passwordTextField.text == password {
             performSegue(withIdentifier: "login", sender: nil)
@@ -65,20 +67,31 @@ class LoginViewController: UIViewController {
         passwordTextField.resignFirstResponder()
     }
     
-    //did not work
+    
     @IBAction func textIFildDoneEditing(sender: UITextField) {
         userNameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
-    /*
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        self.view.endEditing(true)
-        
-        return true
-        
+ 
+    
+    // MARK: Text Field Delegate
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
- */
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else {
+            loginPressed()
+        }
+        return true
+    }
+    
+
     
 }
 

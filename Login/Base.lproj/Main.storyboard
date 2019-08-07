@@ -28,6 +28,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
                                             <action selector="textIFildDoneEditingWithSender:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="SEo-6g-bMT"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="jkm-35-97G"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9o-D0-xd1">
@@ -37,6 +38,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
                                             <action selector="textIFildDoneEditingWithSender:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Epz-UM-xMV"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="NdX-zG-TZu"/>
                                         </connections>
                                     </textField>
                                 </subviews>
